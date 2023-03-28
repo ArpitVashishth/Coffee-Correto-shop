@@ -130,6 +130,9 @@ html{
     /* color 0.2second me change hoga */
     transition: color 0.3s;
 }
+.navright1 a:hover{
+    color: #fd9605;
+}
 
 
 /* End of Navigation
