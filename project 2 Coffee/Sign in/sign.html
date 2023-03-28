@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a53f968ed6.js" crossorigin="anonymous"></script>
+  <title>Sign Up - Tata 1mg</title>
+</head>
+<body>
+  <div id="body">
+    <div id="left">
+      <div id="slideshow_container">
+        <div class="mySlides">
+          <img
+            src="../images/h2-custom-icon-8.png"
+            alt=""
+          />
+          <div class="text">
+            <h2>Cappuccino</h2>
+            <p>
+                "The smell of fresh-made cappuccino is one of the world's greatest inventions."
+            </p>
+          </div>
+        </div>
+        <div class="mySlides">
+          <img
+            src="../images/h2-custom-icon-5.png"
+            alt=""
+          />
+          <div class="text">
+            <h2>Tea</h2>
+            <p>
+                   "A cup of Tea is a cup of peace"
+            </p>
+          </div>
+        </div>
+        <div class="mySlides">
+          <img
+            src="../images/h2-custom-icon-6.png"
+            alt=""
+          />
+          <div class="text">
+            <h2>Raw Coffee</h2>
+            <p>
+              "Delicious to Taste"
+            </p>
+          </div>
+        </div>
+        <div class="mySlides">
+          <img
+            src="../images/h2-custom-icon-7.png"
+            alt=""
+          />
+          <div class="text">
+            <h2>Brown Bread</h2>
+            <p>
+              "Eat with Cappuccino gives delicious Taste "
+            </p>
+          </div>
+        </div>
+      >
+        <div class="dot_container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="right">
+      <div class="close"><a style="color: grey;" href="../index.html"><i class="fa-solid fa-xmark"></i></a></div>
+      <div><h1 class="grey">Sign Up</h1></div>
+      <div><p class="grey">Please enter your Email id and password</p></div>
+      <div id="form">
+        <input type="email" id="email" placeholder="Enter Email"><br>
+        <input type="password" id="password" placeholder="Enter password"><br>
+        <div class="btn-box"><button>Sign Up</button></div>
+      </div>
+      <div class="extra"><p>Have an account?</p> <a href="../Sign in/sign.html">Sign Up</a></div>
+      <div class="extra"><p>For corporate Sign up,</p> <a href="">Click Here</a></div>
+
+      <div class="footer">
+        <p>By signing up, you agree to our</p>
+        <a href="">Terms and conditions</a> & <a href="">Privacy Policy</a>
+      </div>
+    </div>
+</body>
+</html>
+<script>
+  document.querySelector("button").addEventListener("click", mysignup)
+    var regemailpass =JSON.parse(localStorage.getItem("regdata")) || []
+    function mysignup(){
+        var email = document.querySelector("#email").value
+        var password = document.querySelector("#password").value
+
+        if(email == "" || password == ""){
+            alert("Please enter Email/Password to Sign up.")
+        }else{
+            
+        
+        
+        var signupObj = {
+            regemail: email,
+            regpass: password
+        };
+        regemailpass.push(signupObj);
+        localStorage.setItem("regdata",JSON.stringify(regemailpass))
+        alert("Sign up successful, click OK to proceed for Log in")
+        window.location.href = "login.html"
+        }  
+
+    }
+</script>
+<script src="./script/script.js"></script>
